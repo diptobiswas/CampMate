@@ -54,7 +54,7 @@ async def start_build(build_req: BuildRequirements):
     # print(f"The budget is: {build_req.budget}")
     
     items = campingShopper.get_camping_itemlist(build_req.requirements)
-    print('items are: ' + items)
+    #print('items are: ' + items)
 
     budget = campingShopper.create_budget(build_req.requirements, build_req.budget, items)
     print('bugdet is: ' + budget)
@@ -63,9 +63,9 @@ async def start_build(build_req: BuildRequirements):
     print('amazon links are: ' + str(amazon_links))
 
     purchase_list = campingShopper.create_purchase_list(amazon_links)
-    
+    print('purchase list is: ' + str(purchase_list))
 
-    return json.dumps(purchase_list, indent=4,default=str)
+    return purchase_list
 
 @app.route("/logo.png")
 async def get_logo(request):

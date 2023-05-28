@@ -138,15 +138,18 @@ def create_purchase_list(amazon_links):
     purchase_list = []
 
     for amazon_link in amazon_links:
-        purchase_item = {
-            "item_type": amazon_link["item_type"],
-            "item_name": amazon_link["name"],
-            "price": amazon_link["price"],
-            "amazon-link": create_affiliate_link(amazon_link["link"], AMAZON_ID),
-            "youtube-link": {(get_youtube_link(amazon_link["name"] + " review"))}
-        }
-        purchase_list.append(purchase_item)
-
+        if amazon_link == None:
+            continue
+        else:
+          purchase_item = {
+              "item_type": amazon_link["item_type"],
+              "item_name": amazon_link["name"],
+              "price": amazon_link["price"],
+              "amazon-link": create_affiliate_link(amazon_link["link"], AMAZON_ID),
+              "youtube-link": {(get_youtube_link(amazon_link["name"] + " review"))}
+          }
+          purchase_list.append(purchase_item)
+    
     return purchase_list
 
 # print(type(budget))

@@ -98,28 +98,32 @@ def get_products_from_amazon(product_type):
 
 
 def get_product_information(product_type, price):
-  products = get_products_from_amazon(product_type)
+    products = get_products_from_amazon(product_type)
 
-  # Filter by price
-  price_filtered_products = []
+    # Filter by price
+    price_filtered_products = []
 
-  for product in products:
-    if (product["price"] <= price):
-      price_filtered_products.append(product)
+    for product in products:
+        if (product["price"] <= price):
+            price_filtered_products.append(product)
 
-  # stars_filtered_products = [
-  #     p for p in price_filtered_products if p['stars'] >= 4.5]
+    # stars_filtered_products = [
+    #     p for p in price_filtered_products if p['stars'] >= 4.5]
 
-  # reviews_filtered_products = [
-  #     p for p in stars_filtered_products if p['total_reviews'] >= 10]
+    # reviews_filtered_products = [
+    #     p for p in stars_filtered_products if p['total_reviews'] >= 10]
 
-  return price_filtered_products[0]
+    # pprint(price_filtered_products)
+    if price_filtered_products == []:
+        return None
+    else:
+        return price_filtered_products[0]
 
 
-if __name__ == "__main__":
-  product_type = 'boat'
-  price_limit = 50
+# if __name__ == "__main__":
+#   product_type = 'boat'
+#   price_limit = 50
 
-  result = get_product_information(product_type, price_limit)
+#   result = get_product_information(product_type, price_limit)
 
-  pprint(result)
+#   pprint(result)
