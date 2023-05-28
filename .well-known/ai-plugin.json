@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "CampMate",
+    "name_for_model": "camping_shopping_assistant",
+    "description_for_human": "Plugin for helping you shop for your next camping trip.",
+    "description_for_model": "The plugin acts as an expert camping gear shopper for users. It uses the endpoint /get_gear_recommendations. The plugin needs to get (an idea of the weather, exisiting owned gear and interested activies) for the requirements(single string) and a numerical value of the budget.",
+    "auth": {
+      "type": "none"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "http://localhost:8080/openapi.yaml",
+      "is_user_authenticated": false
+    },
+    "logo_url": "http://localhost:8080/logo.png",
+    "contact_email": "support@example.com",
+    "legal_info_url": "https://example.com/legal"
+  }

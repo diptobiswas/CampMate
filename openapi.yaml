@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: Camping Shopper Service
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /get_gear_recommendations:
+    post:
+      summary: Starts the shopping process with given requirements and budget
+      operationId: get_gear_recommendations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BuildRequirements'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                
+components:
+  schemas:
+    BuildRequirements:
+      type: object
+      properties:
+        requirements:
+          type: string
+          description: The requirements for camping
+        budget:
+          type: integer
+          description: The budget for shopping
+      required:
+        - requirements
+        - budget
