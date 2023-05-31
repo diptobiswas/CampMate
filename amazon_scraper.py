@@ -34,7 +34,7 @@ def get_products_from_amazon(product_type):
   driver.get(f'http://www.amazon.ca/s?k={product_type}')
 
   # Wait for the page to load
-  time.sleep(5)
+  time.sleep(2)
 
   # Parse the page source with BeautifulSoup
   soup = BeautifulSoup(driver.page_source, 'html.parser')

@@ -86,44 +86,6 @@ def get_youtube_link(product_name):
 
   return video_results[0]["link"]
 
-# url = "https://www.amazon.ca/Intex-Seahawk-4-Person-Inflatable-Aluminum/dp/B00177BQC6/ref=sr_1_7?keywords=boat&qid=1685224355&sr=8-7"
-# associate_id = "diptobiswas-20"
-# print(create_affiliate_link(url, associate_id))
-
-# print(get_youtube_link("Intex-Seahawk-4-Person"))
-
-# requirement = "I am going to muskoka, the weather will be sunny. I already have a tent and cooler."
-# budget = "$1000"
-
-# items = json.loads(get_camping_itemlist(requirement).replace("'", "\""))
-# budget = create_budget(requirement, budget, items)
-
-# budget = {
-#     "Sleeping Bag": 250,
-#     "Camping Stove": 250,
-#     "Sunscreen": 150,
-#     "Insect Repellent": 150,
-#     "Camping Chair": 200
-#   }
-
-# amazon_links = [
-#     {
-#         "item_type": "boat",
-#         "name": "Intex-Seahawk-4-Person-Inflatable-Aluminum",
-#         "link": "https://www.amazon.ca/Intex-Seahawk-4-Person-Inflatable-Aluminum/dp/B00177BQC6/ref=sr_1_7?keywords=boat&qid=1685224355&sr=8-7",
-#         "price": 100,
-#     }
-# ]
-
-# purchase_list = [
-#       {
-#         "item_type": "boat",
-#         "item_name": "Intex-Seahawk-4-Person-Inflatable-Aluminum",
-#         "price": "$100",
-#         "amazon-link": "https://www.amazon.ca/Intex-Seahawk-4-Person-Inflatable-Aluminum/dp/B00177BQC6/ref=sr_1_7?keywords=boat&qid=1685224355&sr=8-7",
-#         "youtube-link": "https://www.youtube.com/watch?v=NjhCIcplw3Q"
-#       }
-# ]
 def get_amazon_links(budget):
     product_info_dict = []
 
